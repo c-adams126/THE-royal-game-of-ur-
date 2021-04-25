@@ -7,7 +7,7 @@ package rgour;
 
 /**
  *
- * @author gigis
+ * @author curtis
  */
 public class game implements Igame, player1,player2{
     String name;
