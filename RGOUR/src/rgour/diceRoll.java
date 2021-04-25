@@ -4,19 +4,18 @@
  * and open the template in the editor.
  */
 package rgour;
-
+import java.util.Random;
 /**
  *
  * @author gigis
  */
-public class RGOUR {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        
+public class diceRoll {
+    Random rand = new Random();
+    int x;
+    diceRoll(){
+        x = rand.nextInt(3);
     }
-    
+    public int getDice(){
+        return x;
+    }
 }
