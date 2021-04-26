@@ -17,13 +17,17 @@ public class RGOUR {
     public static StartMenuController SMC;
     public static Start SMG;
     public static void main(String[] args) {
-        // TODO code application logic here
+        initialize();
+    }
+    public static void initialize(){
         SMC = null;
         SMG = null;
         SMC = new StartMenuController();
         SMG = new Start();
         SMC.startgui = SMG;
         SMG.startMenuController = SMC;
+        
+        SMG.setVisible(true);
     }
     
 }
