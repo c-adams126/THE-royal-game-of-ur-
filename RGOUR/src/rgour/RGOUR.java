@@ -24,8 +24,8 @@ public class RGOUR {
         SMG = null;
         SMC = new StartMenuController();
         SMG = new Start();
-        SMC.startgui = SMG;
-        SMG.startMenuController = SMC;
+        //SMC.startgui = SMG;
+        //SMG.startMenuController = SMC;
         
         SMG.setVisible(true);
     }
