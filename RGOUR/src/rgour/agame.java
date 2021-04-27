@@ -20,7 +20,17 @@ public class agame extends javax.swing.JFrame {
     public agame() {
         initComponents();
     }
-
+    public void setRollDisplay(String rollDisplayStr){
+        rollDisplay.setText(rollDisplayStr);
+    }
+    public void setWhoseTurnDisplay(int x){
+        if (x == 1){
+            whoseTurnDisplay.setText("Player 1's Turn");
+        }else {
+            whoseTurnDisplay.setText("Player 2's Turn");
+        }
+    }
+    public String rollDisplayStr;
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,10 +70,15 @@ public class agame extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel24 = new javax.swing.JLabel();
+        rollButton = new javax.swing.JButton();
+        rollDisplay = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         exitButton = new javax.swing.JButton();
+        whoversuslabel = new javax.swing.JLabel();
+        difficultyLabel = new javax.swing.JLabel();
+        whoseTurnDisplay = new javax.swing.JLabel();
+        moveButton = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 800));
@@ -184,18 +199,18 @@ public class agame extends javax.swing.JFrame {
         jPanel1.add(jLabel23);
         jLabel23.setBounds(270, 110, 50, 50);
 
-        jButton1.setText("roll");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        rollButton.setText("roll");
+        rollButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                rollButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(900, 630, 49, 23);
+        jPanel1.add(rollButton);
+        rollButton.setBounds(700, 640, 100, 23);
 
-        jLabel24.setText("You Rolled:");
-        jPanel1.add(jLabel24);
-        jLabel24.setBounds(860, 570, 60, 30);
+        rollDisplay.setText("Please Roll");
+        jPanel1.add(rollDisplay);
+        rollDisplay.setBounds(860, 570, 150, 30);
 
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jLabel25);
@@ -209,6 +224,34 @@ public class agame extends javax.swing.JFrame {
         });
         jPanel1.add(exitButton);
         exitButton.setBounds(10, 10, 120, 23);
+
+        whoversuslabel.setText("vs AI");
+        jPanel1.add(whoversuslabel);
+        whoversuslabel.setBounds(210, 20, 80, 14);
+        whoversuslabel.getAccessibleContext().setAccessibleName("whoverseslabel");
+
+        difficultyLabel.setText("difficulty: easy");
+        jPanel1.add(difficultyLabel);
+        difficultyLabel.setBounds(320, 20, 140, 14);
+        difficultyLabel.getAccessibleContext().setAccessibleName("difficultylabel");
+
+        whoseTurnDisplay.setText("Player 1's turn");
+        jPanel1.add(whoseTurnDisplay);
+        whoseTurnDisplay.setBounds(450, 20, 100, 14);
+        whoseTurnDisplay.getAccessibleContext().setAccessibleName("whoseturnlabel");
+
+        moveButton.setText("move");
+        moveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                moveButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(moveButton);
+        moveButton.setBounds(840, 30, 70, 23);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "move piece 1", "move piece 2", "move picece 3", "move piece 4" }));
+        jPanel1.add(jComboBox1);
+        jComboBox1.setBounds(700, 30, 120, 20);
 
         jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -239,15 +282,24 @@ public class agame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void rollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rollButtonActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        //diceRoll d = new diceRoll();
+        //int rollResult = d.getDice();
+        //rollDisplayStr = "You Rolled: " + rollResult;
+        //rollDisplay.setText(rollDisplayStr);
+        controller.roll();
+    }//GEN-LAST:event_rollButtonActionPerformed
 
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         // TODO add your handling code here:
             controller.isdone = true;
     }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void moveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moveButtonActionPerformed
+        // TODO add your handling code here:
+        controller.move();
+    }//GEN-LAST:event_moveButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -290,14 +342,35 @@ public class agame extends javax.swing.JFrame {
             }
         });
     }
+    public void setDificulty(){
+        if(controller.easy == true){
+        difficultyLabel.setText("Difficulty: easy");
+        }else{
+            difficultyLabel.setText("Difficulty: hard");
+        }
+        EmptyDIfficultyLabel();
+    }
+
+    public void vsAi(){
+        whoversuslabel.setText("Vs AI");
+    }
+    public void vsPlayer(){
+        whoversuslabel.setText("Vs Player");
+    }
+    public void EmptyDIfficultyLabel(){
+        if(controller.vsAi == false){
+            difficultyLabel.setText("");
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel difficultyLabel;
     private javax.swing.JButton exitButton;
     private javax.swing.JLabel fp1;
     private javax.swing.JLabel fp2;
     private javax.swing.JLabel fp3;
     private javax.swing.JLabel fp4;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -314,7 +387,6 @@ public class agame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -325,6 +397,11 @@ public class agame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton moveButton;
+    private javax.swing.JButton rollButton;
+    private javax.swing.JLabel rollDisplay;
     private javax.swing.JLabel sp1;
+    private javax.swing.JLabel whoseTurnDisplay;
+    private javax.swing.JLabel whoversuslabel;
     // End of variables declaration//GEN-END:variables
 }

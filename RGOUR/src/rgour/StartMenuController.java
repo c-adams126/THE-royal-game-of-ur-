@@ -32,8 +32,11 @@ public class StartMenuController {
         wt.gamecontroller = gamecontroller;
         wt.gamegui = gamegui;
         gamecontroller.vsAi = vsAi;
+        gamecontroller.easy = easy;
+        gamecontroller.gui = gamegui;
         startgui.dispose();
         gamegui.controller = gamecontroller;
+        
         wt.active = true;
         
       

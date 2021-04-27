@@ -29,8 +29,35 @@ public class game implements Igame, player1,player2{
     boolean end;
     public boolean vsAi;
     public boolean isdone = false;
-    public boolean easy = false;
+    public boolean easy;
     
+    public int[] playerOnePosition = {0,0,0,0};
+    public int[] playerTwoPosition = {0,0,0,0};
+    
+    public int whoseturn = 1;
+    public boolean rolled = false;
+    public agame gui;
+    public void roll(){
+        if (rolled == false){
+            diceRoll d = new diceRoll();
+            int rollResult = d.getDice();
+            gui.rollDisplayStr = "You Rolled: " + rollResult;
+            gui.setRollDisplay(gui.rollDisplayStr);
+            rolled = true;
+        }
+    }
+    public void move(){
+        if(rolled == true){
+            setTurn();
+            gui.setWhoseTurnDisplay(whoseturn);
+            rolled = false;
+            gui.setRollDisplay("Please Roll");
+        }
+    }
+    public void setTurn(){
+        if(whoseturn == 1){ whoseturn = 2; }
+        else { whoseturn = 1; }
+    }
     //player 1 set
     public void setP1Nmae(String p1n){
         p1Name = p1n;

@@ -7,6 +7,8 @@ package rgour;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static rgour.StartMenuController.easy;
+import static rgour.StartMenuController.gamegui;
 
 /**
  *
@@ -30,6 +32,19 @@ public class WatcherThread implements Runnable {
             smc.startgui = startgui;
             startgui.setVisible(true);
         }
+        }
+        
+        //set UI
+        if(gamegui != null){
+            gamegui.setDificulty();
+            if (gamecontroller.vsAi == true){
+                gamegui.vsAi();
+            }else{
+                gamegui.vsPlayer();
+            }
+            
+            
+            
         }
         //see if need to tell gamecontroller to destroy game 
         
