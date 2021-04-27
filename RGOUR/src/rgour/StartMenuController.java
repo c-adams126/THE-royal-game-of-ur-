@@ -28,6 +28,8 @@ public class StartMenuController {
         gamegui = new agame();
         gamegui.setVisible(true);
         gamecontroller = new game();
+        wt.gamecontroller = gamecontroller;
+        wt.gamegui = gamegui;
         
       
         
@@ -37,6 +39,8 @@ public class StartMenuController {
         gamegui.dispose(); 
         gamegui = null;
         gamecontroller = null;
+        wt.gamegui = null;
+        wt.gamecontroller = null;
     }
     static agame gamegui;
     static game  gamecontroller;

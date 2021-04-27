@@ -22,12 +22,18 @@ public class WatcherThread implements Runnable {
             Logger.getLogger(WatcherThread.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("watcher thread repeating");  
+        
+        //see if need to tell gamecontroller to destroy game 
+        
+        
         run();
     }  
    
     public static void main(String[] args) {  
          
     }  
+    
+    
     
     public static agame gamegui;
     public static game  gamecontroller;
