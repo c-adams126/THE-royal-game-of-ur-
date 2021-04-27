@@ -30,6 +30,8 @@ public class StartMenuController {
         gamecontroller = new game();
         wt.gamecontroller = gamecontroller;
         wt.gamegui = gamegui;
+        gamecontroller.vsAi = vsAi;
+        
         
       
         

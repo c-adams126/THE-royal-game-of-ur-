@@ -27,7 +27,8 @@ public class game implements Igame, player1,player2{
     boolean p2;
     boolean start;
     boolean end;
-    boolean vsAi;
+    public boolean vsAi;
+    public boolean isdone = false;
     
     //player 1 set
     public void setP1Nmae(String p1n){
