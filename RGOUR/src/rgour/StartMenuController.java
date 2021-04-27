@@ -10,10 +10,38 @@ package rgour;
  * @author 13094
  */
 public class StartMenuController {
-    public static Start startgui;
+    public static StartGui startgui;
     
     public static void Initialize(){
+      
+    }
+    
+    public static void setVsAi(){
+        vsAi = true;
+    }
+    public static void setVsPlayer(){
+        vsAi = false;
+    }
+    public static boolean vsAi = true;
+    
+    public static void StartGame(){
+        gamegui = new agame();
+        gamegui.setVisible(true);
+        gamecontroller = new game();
+        
+      
+        
            
     }
+    public static void DestroyGame(){
+        gamegui.dispose(); 
+        gamegui = null;
+        gamecontroller = null;
+    }
+    static agame gamegui;
+    static game  gamecontroller;
+    
+   public static WatcherThread wt;
+    
 }
 
