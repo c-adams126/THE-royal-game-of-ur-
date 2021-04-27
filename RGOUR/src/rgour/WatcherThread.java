@@ -22,7 +22,9 @@ public class WatcherThread implements Runnable {
             Logger.getLogger(WatcherThread.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("watcher thread repeating");  
-        
+        if(gamecontroller.isdone == true){
+            smc.DestroyGame();
+        }
         //see if need to tell gamecontroller to destroy game 
         
         
