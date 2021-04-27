@@ -14,6 +14,8 @@ public class agame extends javax.swing.JFrame {
     /**
      * Creates new form agame
      */
+    
+    public int grabeDice;
     public agame() {
         initComponents();
     }
@@ -27,27 +29,216 @@ public class agame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jPanel1 = new javax.swing.JPanel();
+        fp1 = new javax.swing.JLabel();
+        fp2 = new javax.swing.JLabel();
+        fp3 = new javax.swing.JLabel();
+        fp4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        sp1 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1000, 800));
+
+        jPanel1.setBackground(new java.awt.Color(51, 204, 255));
+        jPanel1.setLayout(null);
+
+        fp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try.png"))); // NOI18N
+        jPanel1.add(fp1);
+        fp1.setBounds(80, 650, 50, 50);
+
+        fp2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try.png"))); // NOI18N
+        jPanel1.add(fp2);
+        fp2.setBounds(140, 650, 50, 50);
+
+        fp3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try.png"))); // NOI18N
+        jPanel1.add(fp3);
+        fp3.setBounds(200, 650, 50, 50);
+
+        fp4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try.png"))); // NOI18N
+        jPanel1.add(fp4);
+        fp4.setBounds(260, 650, 50, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/start.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(330, 420, 100, 100);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/tile.png"))); // NOI18N
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(230, 420, 100, 100);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/whitestar.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(30, 420, 100, 100);
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/tile.png"))); // NOI18N
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(130, 320, 100, 100);
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(30, 320, 100, 100);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(130, 420, 100, 100);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(230, 320, 100, 100);
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/whitestar.png"))); // NOI18N
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(330, 320, 100, 100);
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(430, 320, 100, 100);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/tile.png"))); // NOI18N
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(530, 320, 100, 100);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(630, 320, 100, 100);
+
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/tile.png"))); // NOI18N
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(730, 320, 100, 100);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(730, 420, 100, 100);
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/whitestar.png"))); // NOI18N
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(630, 420, 100, 100);
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/start.png"))); // NOI18N
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(330, 220, 100, 100);
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/tile.png"))); // NOI18N
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(230, 220, 100, 100);
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jPanel1.add(jLabel17);
+        jLabel17.setBounds(130, 220, 100, 100);
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/whitestar.png"))); // NOI18N
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(30, 220, 100, 100);
+
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/blacktile.png"))); // NOI18N
+        jPanel1.add(jLabel19);
+        jLabel19.setBounds(730, 220, 100, 100);
+
+        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/whitestar.png"))); // NOI18N
+        jPanel1.add(jLabel20);
+        jLabel20.setBounds(630, 220, 100, 100);
+
+        sp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try2.png"))); // NOI18N
+        jPanel1.add(sp1);
+        sp1.setBounds(90, 110, 50, 50);
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try2.png"))); // NOI18N
+        jPanel1.add(jLabel21);
+        jLabel21.setBounds(150, 110, 50, 50);
+
+        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try2.png"))); // NOI18N
+        jPanel1.add(jLabel22);
+        jLabel22.setBounds(210, 110, 50, 50);
+
+        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/try2.png"))); // NOI18N
+        jPanel1.add(jLabel23);
+        jLabel23.setBounds(270, 110, 50, 50);
+
+        jButton1.setText("roll");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(900, 630, 47, 23);
+
+        jLabel24.setText("You Rolled:");
+        jPanel1.add(jLabel24);
+        jLabel24.setBounds(860, 570, 60, 30);
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel1.add(jLabel25);
+        jLabel25.setBounds(920, 550, 60, 70);
+
+        jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1033, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 756, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -79,5 +270,38 @@ public class agame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fp1;
+    private javax.swing.JLabel fp2;
+    private javax.swing.JLabel fp3;
+    private javax.swing.JLabel fp4;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel sp1;
     // End of variables declaration//GEN-END:variables
 }
