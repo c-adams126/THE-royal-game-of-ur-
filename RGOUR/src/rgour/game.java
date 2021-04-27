@@ -31,6 +31,7 @@ public class game implements Igame, player1,player2{
     public boolean isdone = false;
     public boolean easy;
     
+    //used to track the positions of player's pieces
     public int[] playerOnePosition = {0,0,0,0};
     public int[] playerTwoPosition = {0,0,0,0};
     
