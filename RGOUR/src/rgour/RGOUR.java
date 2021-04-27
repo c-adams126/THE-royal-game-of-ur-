@@ -30,8 +30,8 @@ public class RGOUR {
         SMC.wt = newWatcherThread;
         SMG = new StartGui();
         SMG.controller = SMC;
-        //SMC.startgui = SMG;
-        //SMG.startMenuController = SMC;
+        SMC.startgui = SMG;
+        SMG.controller = SMC;
         
         SMG.setVisible(true);
         
