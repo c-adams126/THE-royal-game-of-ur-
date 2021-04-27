@@ -32,6 +32,7 @@ public class StartGui extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         StartButton = new javax.swing.JButton();
         AIorPlayerCombo = new javax.swing.JComboBox<>();
+        difficultySelection = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -56,6 +57,13 @@ public class StartGui extends javax.swing.JFrame {
             }
         });
 
+        difficultySelection.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "easy AI", "hard AI" }));
+        difficultySelection.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                difficultySelectionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -65,7 +73,8 @@ public class StartGui extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(StartButton)
-                    .addComponent(AIorPlayerCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AIorPlayerCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(difficultySelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -75,6 +84,8 @@ public class StartGui extends javax.swing.JFrame {
                 .addGap(26, 26, 26))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(difficultySelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
                 .addComponent(AIorPlayerCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59)
                 .addComponent(StartButton)
@@ -124,6 +135,16 @@ public class StartGui extends javax.swing.JFrame {
             controller.setVsPlayer();
         }
     }//GEN-LAST:event_AIorPlayerComboActionPerformed
+
+    private void difficultySelectionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_difficultySelectionActionPerformed
+        // TODO add your handling code here:
+        if(String.valueOf(AIorPlayerCombo.getSelectedItem()) == "easy AI"){
+            controller.easy = true;
+        //vs player
+        }else {
+            controller.easy = false;
+        }
+    }//GEN-LAST:event_difficultySelectionActionPerformed
     public static StartMenuController controller;
     /**
      * @param args the command line arguments
@@ -164,6 +185,7 @@ public class StartGui extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> AIorPlayerCombo;
     private javax.swing.JButton StartButton;
+    private javax.swing.JComboBox<String> difficultySelection;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
