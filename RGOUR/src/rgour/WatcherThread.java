@@ -24,6 +24,10 @@ public class WatcherThread implements Runnable {
         System.out.println("watcher thread repeating");  
         if(gamecontroller.isdone == true){
             smc.DestroyGame();
+            startgui = new StartGui();
+            startgui.controller = smc;
+            smc.startgui = startgui;
+            startgui.setVisible(true);
         }
         //see if need to tell gamecontroller to destroy game 
         
@@ -40,4 +44,5 @@ public class WatcherThread implements Runnable {
     public static agame gamegui;
     public static game  gamecontroller;
     public static StartMenuController smc;
+    public static StartGui startgui;
 }  

@@ -31,7 +31,7 @@ public class StartMenuController {
         wt.gamecontroller = gamecontroller;
         wt.gamegui = gamegui;
         gamecontroller.vsAi = vsAi;
-        
+        startgui.dispose();
         
       
         
@@ -43,6 +43,9 @@ public class StartMenuController {
         gamecontroller = null;
         wt.gamegui = null;
         wt.gamecontroller = null;
+        
+        startgui = new StartGui();
+        
     }
     static agame gamegui;
     static game  gamecontroller;
