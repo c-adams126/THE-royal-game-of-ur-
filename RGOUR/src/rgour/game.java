@@ -56,11 +56,19 @@ public class game implements Igame, player1,player2{
         }
     }
     
+    public void AiMove(){
+        //calculate move
+        setTurn();
+        gui.setWhoseTurnDisplay(whoseturn);
+            rolled = false;
+            gui.setRollDisplay("Please Roll");
+    }
+    
     //see if ai should move
     public void SeeIfAi(){
         if(vsAi == true && whoseturn == 2){
             roll();
-            move();
+            AiMove();
         }
     }
     public void setTurn(){
