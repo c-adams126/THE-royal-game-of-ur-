@@ -23,6 +23,7 @@ public class StartMenuController {
         vsAi = false;
     }
     public static boolean vsAi = true;
+    public static boolean easy = true;
     
     public static void StartGame(){
         gamegui = new agame();
@@ -43,6 +44,7 @@ public class StartMenuController {
         gamecontroller = null;
         wt.gamegui = null;
         wt.gamecontroller = null;
+        gamecontroller.easy = easy;
         
         startgui = new StartGui();
         
