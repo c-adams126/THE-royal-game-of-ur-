@@ -52,12 +52,25 @@ public class game implements Igame, player1,player2{
             gui.setWhoseTurnDisplay(whoseturn);
             rolled = false;
             gui.setRollDisplay("Please Roll");
+            SeeIfAi();
+        }
+    }
+    
+    //see if ai should move
+    public void SeeIfAi(){
+        if(vsAi == true && whoseturn == 2){
+            roll();
+            move();
         }
     }
     public void setTurn(){
         if(whoseturn == 1){ whoseturn = 2; }
         else { whoseturn = 1; }
     }
+    
+    
+    
+    
     //player 1 set
     public void setP1Nmae(String p1n){
         p1Name = p1n;
