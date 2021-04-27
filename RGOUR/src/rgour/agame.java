@@ -16,6 +16,7 @@ public class agame extends javax.swing.JFrame {
      */
     
     public int grabeDice;
+    public game controller;
     public agame() {
         initComponents();
     }
@@ -62,6 +63,7 @@ public class agame extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        exitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1000, 800));
@@ -189,7 +191,7 @@ public class agame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(900, 630, 47, 23);
+        jButton1.setBounds(900, 630, 49, 23);
 
         jLabel24.setText("You Rolled:");
         jPanel1.add(jLabel24);
@@ -198,6 +200,15 @@ public class agame extends javax.swing.JFrame {
         jLabel25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jLabel25);
         jLabel25.setBounds(920, 550, 60, 70);
+
+        exitButton.setText("exit game");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(exitButton);
+        exitButton.setBounds(10, 10, 120, 23);
 
         jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -232,6 +243,11 @@ public class agame extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        // TODO add your handling code here:
+            controller.isdone = true;
+    }//GEN-LAST:event_exitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,6 +292,7 @@ public class agame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton exitButton;
     private javax.swing.JLabel fp1;
     private javax.swing.JLabel fp2;
     private javax.swing.JLabel fp3;

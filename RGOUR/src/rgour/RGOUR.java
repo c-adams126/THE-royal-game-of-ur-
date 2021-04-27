@@ -32,7 +32,11 @@ public class RGOUR {
         SMG.controller = SMC;
         SMC.startgui = SMG;
         SMG.controller = SMC;
-        
+        SMC.wt.smc = SMC;
+        //newWatcherThread.gamegui = 
+        //newWatcherThread.gamecontroller;
+        //newWatcherThread.smc;
+        //newWatcherThread.startgui;
         SMG.setVisible(true);
         
         //watches to see if game is over and gui needs to be recycled
@@ -41,7 +45,9 @@ public class RGOUR {
     }
     
     public static void StartGame(game game, agame gui){
+        
         agame op = new agame();
+        SMC.wt.gamegui = op;
         op.setVisible(true);
     }
     

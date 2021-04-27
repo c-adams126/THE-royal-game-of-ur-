@@ -22,12 +22,14 @@ public class WatcherThread implements Runnable {
             Logger.getLogger(WatcherThread.class.getName()).log(Level.SEVERE, null, ex);
         }
         System.out.println("watcher thread repeating");  
-        if(gamecontroller.isdone == true){
+        if(gamecontroller != null){ 
+        if(gamecontroller.isdone == true && active == true){
             smc.DestroyGame();
             startgui = new StartGui();
             startgui.controller = smc;
             smc.startgui = startgui;
             startgui.setVisible(true);
+        }
         }
         //see if need to tell gamecontroller to destroy game 
         
@@ -40,7 +42,7 @@ public class WatcherThread implements Runnable {
     }  
     
     
-    
+    public boolean active = false;
     public static agame gamegui;
     public static game  gamecontroller;
     public static StartMenuController smc;

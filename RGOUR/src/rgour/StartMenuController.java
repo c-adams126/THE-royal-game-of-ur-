@@ -33,18 +33,21 @@ public class StartMenuController {
         wt.gamegui = gamegui;
         gamecontroller.vsAi = vsAi;
         startgui.dispose();
+        gamegui.controller = gamecontroller;
+        wt.active = true;
         
       
         
            
     }
     public static void DestroyGame(){
+        wt.active = false;
         gamegui.dispose(); 
         gamegui = null;
         gamecontroller = null;
         wt.gamegui = null;
         wt.gamecontroller = null;
-        gamecontroller.easy = easy;
+//        gamecontroller.easy = easy;
         
         startgui = new StartGui();
         
